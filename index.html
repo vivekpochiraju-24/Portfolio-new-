@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Pochiraju Vivek</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom Styles */
+        .hero-section-heading {
+            position: relative;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-section-heading .developer-logo {
+            width: 50px;
+            height: auto;
+            margin-left: 10px;
+        }
+
+        .button {
+            display: block;
+            width: 150px;
+            margin: 0 auto;
+            padding: 10px;
+            text-align: center;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0.1;
+            font-size: 2rem;
+            color: #000;
+        }
+
+        .role {
+            font-weight: bold;
+        }
+
+        .typing-animation {
+            display: inline;
+            font-weight: bold;
+            border-right: 2px solid;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: black }
+        }
+
+        /* Project Section Styles */
+        .project-section {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .project-header-cards {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-header-card {
+            width: 100%;
+            max-width: 400px;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            position: relative;
+        }
+
+        .project-header-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+            border-radius: 10px;
+        }
+
+        .project-header-title, .project-header-description, .button {
+            position: relative;
+            z-index: 1; /* Above the overlay */
+        }
+
+        .project-header-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white; /* Change heading color to white */
+        }
+
+        .project-header-description {
+            margin-bottom: 20px;
+            color: #e0e0e0; /* Adjust description color for readability */
+        }
+
+        .project-header-card .button {
+            width: 100%;
+        }
+
+        /* Specific Backgrounds for Projects */
+        .project-header-card.project-1 {
+            background-image: url('https://preview.redd.it/vw3ewdyrrsq61.png?width=1834&format=png&auto=webp&s=02fafd959d5eef9c85a59d7795f657bca6f4be98');
+        }
+
+        .project-header-card.project-2 {
+            background-image: url('https://www.cioinsight.com/wp-content/uploads/2022/08/Chatbots-in-Machine-Learning-scaled.jpeg');
+        }
+
+        .project-header-card.project-3 {
+            background-image: url('https://codewithfaraz.com/img/build%20your%20own%20tic%20tac%20toe%20game%20with%20html,%20css,%20and%20javascript.jpg');
+        }
+
+        /* Skills Section Styles */
+        .skills-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .skill-container-left {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .skill-container-right {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .skil-fade-text {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .skill-heading {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .skill-subHeading p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .skill-subHeading ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skill-subHeading li {
+            margin-bottom: 10px;
+        }
+
+        .skills-logo {
+            width: 50px;
+            height: auto;
+        }
+
+        /* Contact Section Styles */
+        .contactus-heading, .contactus-subHeading {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .contactus-heading {
+            margin-bottom: 10px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333; /* Change color for visibility */
+        }
+
+        .contactus-subHeading {
+            font-size: 1.25rem;
+            color: #666; /* Change color for readability */
+        }
+
+        .form-field-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .formfield {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .formfield-textarea {
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+
+            <!-- Navbar -->
+            <div class="navbar">
+                <div class="logo-container">
+                    <img src="https://friendlystock.com/wp-content/uploads/2022/09/22-graffiti-letter-v-cartoon-clipart.jpg" alt="V" class="logo">
+                    <div class="logo-text">Pochiraju Vivek</div>
+                </div>
+                <div class="nav-items" id="home">
+                    <div><a href="#projects">Projects</a></div>
+                    <div><a href="#skills">Skills</a></div>
+                    <div><a href="#contactme">Contact Me</a></div>
+                </div>
+            </div>
+
+            <!-- Hero Section -->
+            <div class="hero-section">
+              
+                <div class="hero-section-left">
+                    <div class="hero-section-heading">
+                        Hi! I'm Pochiraju Vivek!
+                        <img src="https://image.pngaaa.com/560/2546560-middle.png" alt="Developer Logo" class="developer-logo">
+                    </div>
+                    <div class="hero-section-subheading">
+                        I am a <span id="role" class="role typing-animation"></span>
+                    </div>
+                    <div class="hero-section-description">
+                        I am a Computer Science and Engineering student. Welcome to my portfolio website where you can explore my projects and skills!
+                    </div>
+                    <div class="button" id="btn">Hire Me</div>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="project-section" id="projects">
+                <h2 class="page-header">Recent Projects</h2>
+                <div class="project-header-cards">
+                    <div class="project-header-card project-1">
+                        <div class="project-header-title">Project 01</div>
+                        <div class="project-header-description">Power BI Dashboard</div>
+                        <button class="button">View Details</button>
+                    </div>
+                    <div class="project-header-card project-2">
+                        <div class="project-header-title">Project 02</div>
+                        <div class="project-header-description">Chatbot</div>
+                        <button class="button">View Details</button>
+                    </div>
+                    <div class="project-header-card project-3">
+                        <div class="project-header-title">Project 03</div>
+                        <div class="project-header-description">Tic-Tac-Toe</div>
+                        <button class="button">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+<div id="skills" class="skills-container container">
+    <div class="skill-container-left">
+        <h2 class="skill-heading">My Tech Stack</h2>
+
+            <ul>
+                <li><strong>Python</strong> - For data analysis, machine learning, and backend development.</li>
+                <li><strong>Power BI</strong> - For creating interactive and insightful business intelligence dashboards.</li>
+                <li><strong>SQL</strong> - For managing and querying relational databases efficiently.</li>
+                <li><strong>Data Science</strong> - To extract meaningful insights and make data-driven decisions.</li>
+                <li><strong>HTML & CSS</strong> - For designing and styling web pages.</li>
+                <li><strong>AI</strong> - Leveraging artificial intelligence to create innovative solutions.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="skill-container-right">
+        <!-- New Logos -->
+        <img src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api&P=0&h=180" class="skills-logo" alt="Logo 1">
+        <img src="https://up.yimg.com/ib/th?id=OIP.Oxo-u9GMK3zbEM5h-FiVnQHaEK&pid=Api&rs=1&c=1&qlt=95&w=171&h=95" class="skills-logo" alt="Logo 2">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.7rwMEjcw2fwJgJJivM6CVAHaHa&pid=Api&P=0&h=180" class="skills-logo" alt="Logo 3">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.tAvAD5lCtDJSjywplxd37QHaEo&pid=Api&P=0&h=180" class="skills-logo" alt="Logo 4">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.KV1Auis1ZrFyNdc_KkivhAHaGM&pid=Api&P=0&h=180" class="skills-logo" alt="Logo 5">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.GTsBU64y9p1IsOWaZyI9dQHaFy&pid=Api&P=0&h=180" class="skills-logo" alt="Logo 6">
+        <img src="https://img.freepik.com/premium-vector/data-science-logo-template_567288-95.jpg?w=2000" class="skills-logo" alt="Data Science Logo">
+    </div>
+</div>
+
+
+            <!-- Contact Us Section -->
+            <div class="contactus-form-container" id="contactme">
+                <div class="container">
+                    <h1 class="contactus-heading">Contact Me</h1>
+                    <h2 class="contactus-subHeading">Questions, Thoughts Or Just Want To Say Hello?</h2>
+                    <form class="form" action="mailto:pochiraju.vivek@example.com" method="post" enctype="text/plain">
+                        <div class="form-field-container">
+                            <input class="formfield" type="text" name="name" placeholder="Enter your name">
+                            <input class="formfield" type="email" name="email" placeholder="Enter your email address">
+                            <input class="formfield" type="text" name="subject" placeholder="Enter your subject">
+                            <textarea name="message" cols="30" rows="10" class="formfield formfield-textarea" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="button" id="submit-btn">Send Message <i class="submit-icon fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Watermark -->
+        <div class="watermark">Pochiraju Vivek</div>
+
+        
+        
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript to handle the role display with typing animation
+        const roles = ['Data Scientist', 'Power BI Developer', 'AI Engineer', 'Public Speaker', 'Advanced Office Master', 'Full Stack Developer'];
+        let currentRoleIndex = 0;
+        const roleElement = document.getElementById('role');
+
+        function typeRole() {
+            let currentRole = roles[currentRoleIndex];
+            roleElement.textContent = '';
+            let index = 0;
+
+            function typeChar() {
+                if (index < currentRole.length) {
+                    roleElement.textContent += currentRole.charAt(index);
+                    index++;
+                    setTimeout(typeChar, 100);
+                } else {
+                    currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+                    setTimeout(() => {
+                        roleElement.textContent = '';
+                        typeRole();
+                    }, 2000);
+                }
+            }
+
+            typeChar();
+        }
+
+        typeRole();
+
+        // Popup functionality
+        const btn = document.getElementById('btn');
+        const popup = document.getElementById('popup');
+        const popupClose = document.getElementById('popup-close');
+
+        btn.addEventListener('click', () => {
+            popup.classList.add('active');
+        });
+
+        popupClose.addEventListener('click', () => {
+            popup.classList.remove('active');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+            }
+        });
+
+        // Sequential Display of Headers
+        const contactHeading = document.querySelector('.contactus-heading');
+        const contactSubHeading = document.querySelector('.contactus-subHeading');
+
+        function showHeadersSequentially() {
+            contactHeading.style.opacity = '1';
+            contactHeading.style.transition = 'opacity 1s';
+            setTimeout(() => {
+                contactSubHeading.style.opacity = '1';
+                contactSubHeading.style.transition = 'opacity 1s';
+            }, 1000); // Delay the appearance of the contactSubHeading
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            contactHeading.style.opacity = '0';
+            contactSubHeading.style.opacity = '0';
+            showHeadersSequentially();
+        });
+    </script>
+</body>
+</html>

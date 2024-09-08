@@ -1,0 +1,317 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+/* Container Styles */
+#wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+.nav-items {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
+
+.nav-items a:hover {
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+.hero-section-left {
+  flex: 1;
+  padding: 20px;
+}
+
+.hero-section-heading {
+  font-size: 48px;
+  font-weight: 700;
+  color: #0d6efd;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.developer-logo {
+  width: 60px;
+  height: 60px;
+  margin-left: 15px;
+}
+
+.hero-section-subheading {
+  font-size: 24px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.hero-section-description {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.button {
+  background-color: #0d6efd;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0844a3;
+}
+
+.hero-section-right {
+  flex: 1;
+  position: relative;
+}
+
+.user-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icons {
+  position: absolute;
+}
+
+.icon-dots {
+  top: 0;
+  right: 0;
+}
+
+.icon-cube {
+  top: 50%;
+  left: 0;
+}
+
+.icon-circle {
+  bottom: 0;
+  right: 50%;
+}
+
+.icon-zigzag {
+  bottom: 0;
+  left: 50%;
+}
+
+.icon-plus {
+  top: 0;
+  left: 50%;
+}
+
+/* Project Section Styles */
+.project-section {
+  padding: 40px 20px;
+}
+
+.page-header {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #0d6efd;
+  text-align: center;
+}
+
+/* Project Header Cards Styles */
+.project-header-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.project-header-card {
+  background-color: #f0f4f8;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 250px;
+  cursor: pointer;
+}
+
+.project-header-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-header-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-header-description {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Skills Section Styles */
+.skills-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.skill-container-left {
+    flex: 1;
+    padding: 20px;
+}
+
+.skill-container-right {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skills-logo {
+    width: 50px;
+    height: auto;
+    margin: 5px;
+}
+
+
+/* Contact Us Section Styles */
+.contactus-form-container {
+  padding: 50px 0;
+}
+
+.contactus-heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0d6efd;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contactus-subHeading {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #221883;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formfield {
+  padding: 15px;
+  border: 2px solid #0d6efd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.formfield-textarea {
+  height: 150px;
+  resize: none;
+}
+
+#submit-btn {
+  align-self: center;
+}
+
+/* Watermark Styles */
+.watermark {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 48px;
+  color: rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  z-index: 1;
+  pointer-events: none;
+  transform: rotate(-45deg);
+}
+
+/* Fade In Animation for Role */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
